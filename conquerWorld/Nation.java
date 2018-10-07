@@ -119,7 +119,6 @@ public class Nation
         else if (shape.equals("Elipse")){
              Figura figura = new Elipse(color,area,position[0],position[1]);
         }
-        this.area=area;
         figura.makeVisible();
     }
     public int getArmiesNeeded(){
