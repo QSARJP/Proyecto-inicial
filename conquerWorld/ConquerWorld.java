@@ -1,5 +1,5 @@
 package conquerWorld;
-
+import shapes.*;
 import java.util.*;
 import java.util.Collections;
 /**
@@ -54,7 +54,7 @@ public class ConquerWorld
      */
     public void addCash(int amount) {
         this.cash = amount;
-        Rectangle medidor = new Rectangle(amount,50,0,0,"green");
+        Figura medidor = new Rectangle(amount,50,0,0,"green");
         medidor.makeVisible();
     }
     /**

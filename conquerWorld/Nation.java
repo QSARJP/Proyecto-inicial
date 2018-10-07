@@ -1,5 +1,6 @@
 package conquerWorld;
 import java.util.*;
+import shapes.*;
 
 /**
  * Write a description of class Nation here.
@@ -9,8 +10,6 @@ import java.util.*;
  */
 public class Nation
 {
-    //HOLA
-    // instance variables - replace the example below with your own
     private String name;
     private String shape;
     private int area;
@@ -104,38 +103,22 @@ public class Nation
      */
     public void crear(String shape, int area, String color, int[] position){
         if (shape.equals("Circle")){
-            double medida = Math.pow(4*area/PI, 0.5);
-            Circle nCircle = new Circle(medida, position[0], position[1], color);
-            nCircle.makeVisible();
-            figura = nCircle;
+            Figura figura = new Circle(color,area,position[0],position[1]);
         }
         else if (shape.equals("Rectangle")){
-            double medida = Math.pow(area/2,0.5);
-            Rectangle nRectangle = new Rectangle((int)medida,2*(int)medida,position[0],position[1],color);
-            nRectangle.makeVisible();
-            figura= nRectangle;
+            Figura figura = new Rectangle(color,area,position[0],position[1]);
         }
         else if (shape.equals("Square")){
-            double medida = Math.pow(area,0.5);
-            Square nSquare = new Square((int) medida,position[0],position[1],color);
-            nSquare.makeVisible();
-            figura = nSquare;
+            Figura figura = new Square(color,area,position[0],position[1]);
         }
         else if (shape.equals("Triangle")){
-            double medida = Math.pow(4*area/Math.pow(3,0.5),0.5);
-            Triangle nTriangle = new Triangle((int)medida,(int) Math.pow(5,0.5)*(int)medida/2,position[0],position[1],color);
-            nTriangle.makeVisible();
-            figura = nTriangle;
+            Figura figura = new Triangle(color,area,position[0],position[1]);
         }
         else if (shape.equals("Elipse")){
-             double medida=Math.pow(area/2*PI,0.5);
-             Elipse nCircle = new Elipse((int)medida,2*(int)medida, position[0], position[1], color);
-             nCircle.makeVisible();
-             figura = nCircle;
-             
-             
+             Figura figura = new Elipse(color,area,position[0],position[1]);
         }
         this.area=area;
+        figura.makeVisible();
     }
     public int getArmiesNeeded(){
         return armiesNeeded;

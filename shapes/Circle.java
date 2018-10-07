@@ -10,7 +10,7 @@ import java.lang.*;
  * @author (your name)
  * @version (a version number or a date)
  */
-public abstract class Circle extends Figura
+public class Circle extends Figura
 {
     // instance variables - replace the example below with your own
     
