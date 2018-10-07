@@ -24,6 +24,7 @@ public abstract class Figura
         this.area = area;
         this.xPosition = xPosition;
         this.yPosition = yPosition;
+        this.isVisible = false;
     }
         /**
      * vuelve visible la figura
