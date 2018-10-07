@@ -5,23 +5,36 @@ import java.util.Calendar;
 import java.lang.*;
 
 /**
- * Abstract class Circle - write a description of the class here
+ * Write a description of class Circle here.
  *
- * @author (your name here)
- * @version (version number or date here)
+ * @author (your name)
+ * @version (a version number or a date)
  */
-public abstract class Circle extends Shape
+public abstract class Circle extends Figura
 {
-    private double diameter;
-    public Circle(String color, double area, int positionX, int positionY){
-       super(color,area,positionX,positionY);
+    // instance variables - replace the example below with your own
+    
+    public static double PI = 3.1416;
+    /**
+     * Constructor for objects of class Circle
+     */
+    public Circle(String color, double area, int xPosition, int yPosition)
+    {
+        super(color, area, xPosition, yPosition);
     }
-   
+
     public void draw(){
-            if(isVisible) {
+        if(isVisible) {
+            double diameter = calcularDiametro(area);
+            Canvas circle = Canvas.canvas;
             circle.draw(this, color, 
                 new Ellipse2D.Double(xPosition, yPosition, 
                 diameter, diameter));
         }
     }
+    
+    private double calcularDiametro(double area){
+        return Math.pow(4*area/PI, 0.5);
+    }
+    
 }

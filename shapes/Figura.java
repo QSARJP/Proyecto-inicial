@@ -1,4 +1,9 @@
 package shapes;
+import java.awt.*;
+import java.awt.geom.*;
+import java.util.Calendar;
+import java.lang.*;
+
 
 
 /**
@@ -7,14 +12,14 @@ package shapes;
  * @author (your name here)
  * @version (version number or date here)
  */
-public abstract class Shape
+public abstract class Figura
 {
     protected int xPosition;
     protected int yPosition;
     protected String color;
-    private double area;
+    protected double area;
     protected boolean isVisible;
-    public Shape(String color, double area, int xPosition, int yPosition){
+    public Figura(String color, double area, int xPosition, int yPosition){
         this.color = color;
         this.area = area;
         this.xPosition = xPosition;
@@ -42,17 +47,19 @@ public abstract class Shape
         color = newColor;
         draw();
     }
-        /**
+     /**
      * Erase the circle on screen.
      */
     private void erase(){
         if(isVisible) {
-            Canvas circle = Canvas.canvas;
-            circle.erase(this);
+            Canvas shape = Canvas.canvas;
+            shape.erase(this);
         }
     }
     /**
      * Dibuja la figura
      */
     public abstract void draw();
+    
 }
+
