@@ -19,7 +19,7 @@ public class Nation
     private ArrayList<Army> armies = new ArrayList<Army>();
     private ArrayList<String> rutas = new ArrayList<String>();
     public static double PI=3.1416;
-    private Object figura;
+    private Figura figura;
     /**
      * Constructor for objects of class Nation
      * @param shape Indica la forma de la nacion
@@ -104,20 +104,25 @@ public class Nation
     public void crear(String shape, int area, String color, int[] position){
         if (shape.equals("Circle")){
             Figura figura = new Circle(color,area,position[0],position[1]);
+            figura.makeVisible();
         }
         else if (shape.equals("Rectangle")){
             Figura figura = new Rectangle(color,area,position[0],position[1]);
+            figura.makeVisible();
         }
         else if (shape.equals("Square")){
             Figura figura = new Square(color,area,position[0],position[1]);
+            figura.makeVisible();
         }
         else if (shape.equals("Triangle")){
             Figura figura = new Triangle(color,area,position[0],position[1]);
+            figura.makeVisible();
         }
         else if (shape.equals("Elipse")){
-             Figura figura = new Elipse(color,area,position[0],position[1]);
+            Figura figura = new Elipse(color,area,position[0],position[1]);
+            figura.makeVisible();
         }
-        figura.makeVisible();
+        
     }
     public int getArmiesNeeded(){
         return armiesNeeded;
@@ -142,5 +147,8 @@ public class Nation
     public void reset(){
         ArrayList<Army> armies = null;
         ArrayList<String> rutas = null;;
+    }
+    public void cambiarColor(){
+        figura.changeColor("green");
     }
 }

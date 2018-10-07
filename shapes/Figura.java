@@ -48,7 +48,7 @@ public abstract class Figura
         color = newColor;
         draw();
     }
-     /**
+    /**
      * Erase the circle on screen.
      */
     private void erase(){
@@ -56,6 +56,10 @@ public abstract class Figura
             Canvas shape = Canvas.canvas;
             shape.erase(this);
         }
+    }
+    public int[] getPosition(){
+        int[] posiciones = {xPosition,yPosition};
+        return posiciones;
     }
     /**
      * Dibuja la figura
