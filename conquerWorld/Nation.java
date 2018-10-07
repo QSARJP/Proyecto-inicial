@@ -102,8 +102,6 @@ public class Nation
      * @param position Indica las coordenas x y y donde se ubicará la nación
      */
     public void crear(String shape, int area, String color, int[] position){
-        
-        
         if (shape.equals("Circle")){
             Figura figura = new Circle(color,area,position[0],position[1]);
         }
