@@ -8,7 +8,7 @@ import shapes.*;
  * @author (your name)
  * @version (a version number or a date)
  */
-public class Nation
+public abstract class Nation
 {
     private String name;
     private String shape;
@@ -17,9 +17,9 @@ public class Nation
     private int[] position;
     private int armiesNeeded;
     private ArrayList<Army> armies = new ArrayList<Army>();
-    private ArrayList<String> rutas = new ArrayList<String>();
+    protected ArrayList<String> rutas = new ArrayList<String>();
     public static double PI=3.1416;
-    private Figura figura;
+    protected Figura figura;
     /**
      * Constructor for objects of class Nation
      * @param shape Indica la forma de la nacion
@@ -44,9 +44,7 @@ public class Nation
      * Agrega un ejercito a la nacion actual
      */
     public void addArmy(){
-        Army nArmy = new Army();
-        armies.add(nArmy);
-        nArmy.drawArmy();
+        armies.add(new Army());
     }
     /**
      * Remueve un ejercito de la nacion actual
@@ -69,9 +67,8 @@ public class Nation
     /**
      * Remueve la nacion de la lista de rutas de la nacion actual
      */
-    public void removeRoute(String nation){
-        rutas.remove(nation);
-    }
+    public abstract void removeRoute(String nation);
+
     public int getSizeArmies(){
         return armies.size();
     }
@@ -138,10 +135,7 @@ public class Nation
     /**
      * Elimina la figura
      */
-    public void borrar(){
-        Canvas canvas = Canvas.canvas;
-        canvas.erase(figura);
-    }
+    public abstract void borrar();
     
     /**
      * reset todas las arrayList que contiene el objeto Nation

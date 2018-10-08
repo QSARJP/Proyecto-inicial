@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=NormalNation
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ NationNormal\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=shape\ area\ color\ position\ armiesNeeded
+comment1.target=NormalNation(java.lang.String,\ int,\ java.lang.String,\ int[],\ int)
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ NationNormal\r\n
+comment2.params=nation
+comment2.target=void\ removeRoute(java.lang.String)
+comment3.params=
+comment3.target=void\ borrar()
+numComments=4

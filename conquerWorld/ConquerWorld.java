@@ -46,7 +46,7 @@ public class ConquerWorld
      *Remueve una nación del conquerworld
      *@param nation Nombre de la nacion que se va a remover
      */
-    public void removeN(String nation){
+    private void removeN(String nation){
          nats.remove(nation);
     }
     /**
@@ -78,7 +78,33 @@ public class ConquerWorld
         }
         if (nation == null && key == false){
             
-            nation = new Nation(shape, area, color, position, armiesNeeded);
+            nation = new NormalNation(shape, area, color, position, armiesNeeded);
+            nation.crear(shape, area, color, position);
+            nats.put(nation.getName(), nation);
+            indicador = true;
+        }
+        else{
+            indicador = false;
+        }
+    }
+    public void addNation(String shape, int area, String color, int[] position, int armiesNeeded,String type) {
+        nation = getNation(color);
+        boolean key = false;
+        Nation n;
+        for (String i:nats.keySet()){
+                n = getNation(i); 
+                if (n.getPosition()[0]== position[0] && n.getPosition()[1]== position[1] ){
+                    key = true;
+                }
+        }
+        if (nation == null && key == false){
+            if (shape.equals("normal")){
+                nation = new NormalNation(shape, area, color, position, armiesNeeded);
+            }else if (shape.equals("steady")){
+                nation = new SteadyNation(shape, area, color, position, armiesNeeded,type);
+            }else{
+                
+            }
             nation.crear(shape, area, color, position);
             nats.put(nation.getName(), nation);
             indicador = true;
