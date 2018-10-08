@@ -44,7 +44,9 @@ public class Nation
      * Agrega un ejercito a la nacion actual
      */
     public void addArmy(){
-        armies.add(new Army());
+        Army nArmy = new Army();
+        armies.add(nArmy);
+        nArmy.drawArmy();
     }
     /**
      * Remueve un ejercito de la nacion actual

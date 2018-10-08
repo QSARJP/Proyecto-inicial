@@ -1,5 +1,5 @@
 package conquerWorld;
-
+import shapes.*;
 
 public class Army
 {
@@ -14,8 +14,11 @@ public class Army
         this.army = 1;
     }
     
-    public int getArmy(){
+    public int getArmy(int[] posiciones, Army ejercito){
         return army;
     }
     
+    public void drawArmy(){
+        
+    }
 }
