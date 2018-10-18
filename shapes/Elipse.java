@@ -14,13 +14,6 @@ import java.lang.*;
 public  class Elipse extends Figura
 {
     public static double PI=3.1416;
-    private int side;
-    private int diameter;
-    private int xPosition;
-    private int yPosition;
-    private String color;
-    private boolean isVisible;
-    
     
     public Elipse(String color, double area, int xPosition, int yPosition)
     {
@@ -37,7 +30,7 @@ public  class Elipse extends Figura
             Canvas circle = Canvas.canvas;
             circle.draw(this, color, 
                 new Ellipse2D.Double(xPosition, yPosition, 
-                diameter, side));
+                (int)diameter, side));
         }
     }
     private double calcularLado(double area){

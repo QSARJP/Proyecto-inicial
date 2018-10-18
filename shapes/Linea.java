@@ -68,8 +68,8 @@ public class Linea
     private void draw(){
         if(isVisible) {
             Canvas medidor = Canvas.canvas;
-            int[] xpoints = { xPosition1,xPosition1+5,xPosition2, xPosition2+10};
-            int[] ypoints = { yPosition1,yPosition1+5,yPosition2, yPosition2+10 };
+            int[] xpoints = { xPosition1,xPosition1+5,xPosition2, xPosition2+1};
+            int[] ypoints = { yPosition1,yPosition1+5,yPosition2, yPosition2+1 };
             medidor.draw(this, color, new Polygon(xpoints, ypoints, 4));
         }
     }

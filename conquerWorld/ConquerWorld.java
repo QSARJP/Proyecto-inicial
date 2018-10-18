@@ -13,7 +13,7 @@ public class ConquerWorld
 {
     // instance variables - replace the example below with your own
     private boolean isVisible;
-    private int cash;
+    public int cash;
     private int maxX;
     private int maxY;
     private HashMap<String,Nation> nats = new HashMap<String,Nation>();
@@ -98,12 +98,10 @@ public class ConquerWorld
                 }
         }
         if (nation == null && key == false){
-            if (shape.equals("normal")){
+            if (type.equals("normal")){
                 nation = new NormalNation(shape, area, color, position, armiesNeeded);
-            }else if (shape.equals("steady")){
+            }else if (type.equals("steady")){
                 nation = new SteadyNation(shape, area, color, position, armiesNeeded,type);
-            }else{
-                
             }
             nation.crear(shape, area, color, position);
             nats.put(nation.getName(), nation);
@@ -177,8 +175,8 @@ public class ConquerWorld
             Route route1 = new Route(nations,cost);
             String[] nations2 = {nations[1],nations[0]}; 
             Route route2 = new Route(nations2,cost);
-            n1.addRoute(nations[1]);
-            n2.addRoute(nations[0]);
+            n1.addRoute(cost,n1);
+            n2.addRoute(cost,n2);
             routes.put(route1.getName(),route1);
             routes.put(route2.getName(),route2);
             indicador = true;
@@ -216,13 +214,25 @@ public class ConquerWorld
     public void addArmy(String nation){
         Nation n = getNation(nation);
         if (n != null){
-            n.addArmy();
+            n.newArmy("normal");
             indicador = true;
         }
         else{
             indicador = false;
         }
     }
+    
+    public void addArmy(String nation, String type){
+        Nation n = getNation(nation);
+        if (n != null){
+            n.newArmy(type);
+            indicador = true;
+        }
+        else{
+            indicador = false;
+        }        
+    }
+    
     /**
      * Agrega un ejercito a cada una de las naciones que esta en la lista
      * @param nations Lista de naciones a las que se les va a adicionar un ejercito
@@ -240,7 +250,7 @@ public class ConquerWorld
         if (key){
             for (String i: nations){
                 Nation nacion = getNation(i);
-                nacion.addArmy();
+                nacion.newArmy("normal");
             }
             indicador = true;
         }
@@ -277,12 +287,14 @@ public class ConquerWorld
         if (r != null){
             int cost = r.getCost();
             if (sizeArmyN1>0 &&(n1 != null && n2 != null)&&(sizeN1>0 && sizeN2 > 0)&& cost<cash){
-                n1.removeArmy();
-                n2.addArmy();
+                Army army = n1.removeArmy(0);
+                cash -= army.moveArmy(cost,n2);
                 indicador = true;
-            }else{
-            indicador = false;
-        }
+                
+            }
+            else{
+                indicador = false;
+            }
         }else{
             indicador = false;
         }

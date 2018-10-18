@@ -17,7 +17,7 @@ public abstract class Nation
     private int[] position;
     private int armiesNeeded;
     private ArrayList<Army> armies = new ArrayList<Army>();
-    protected ArrayList<String> rutas = new ArrayList<String>();
+    protected TreeMap<Integer,Nation> rutas = new TreeMap<Integer,Nation>();
     public static double PI=3.1416;
     protected Figura figura;
     /**
@@ -43,14 +43,25 @@ public abstract class Nation
     /**
      * Agrega un ejercito a la nacion actual
      */
-    public void addArmy(){
-        armies.add(new Army());
+    public void newArmy(String type){
+        if (type.equals("normal")){
+            armies.add(new NormalArmy(position));
+        }
+        else if(type.equals("steady")){
+            armies.add(new SteadyArmy(position));
+        }
+        else if (type.equals("proactive")){
+            armies.add(new ProactiveArmy(position));
+        }
+    }
+    public void addArmy(Army ejercito){
+        armies.add(ejercito);
     }
     /**
      * Remueve un ejercito de la nacion actual
      */
-    public void removeArmy(){
-        armies.remove(0);
+    public Army removeArmy(int valor){
+        return armies.remove(valor);
     }
     /**
      * Limpia la lista de ejercitos de la nación actual
@@ -61,14 +72,22 @@ public abstract class Nation
     /**
      * Agrega a la lista de rutas, la nacion de destino de la nación actual
      */
-    public void addRoute(String nation){
-        rutas.add(nation);
+    public void addRoute(int cost,Nation nation){
+        rutas.put(cost,nation);
     }
     /**
      * Remueve la nacion de la lista de rutas de la nacion actual
      */
     public abstract void removeRoute(String nation);
-
+    
+    public int getMenorCosto(){
+        return rutas.firstKey();
+    }
+    
+    public Nation getNation(){
+        return rutas.get(getMenorCosto());
+    }
+    
     public int getSizeArmies(){
         return armies.size();
     }
@@ -76,8 +95,13 @@ public abstract class Nation
         return rutas.size();
     }
     public ArrayList<String> getRoutes(){
-        Collections.sort(rutas);
-        return rutas;
+        ArrayList<String> listaRutas = new ArrayList<String>();
+        for (int i: rutas.keySet()){
+            Nation n = rutas.get(i);
+            listaRutas.add(n.getName());
+        }
+        Collections.sort(listaRutas);
+        return listaRutas;
     }
     public int[] getPosition(){
         return position;
@@ -143,8 +167,5 @@ public abstract class Nation
     public void reset(){
         ArrayList<Army> armies = null;
         ArrayList<String> rutas = null;;
-    }
-    public void cambiarColor(){
-        figura.changeColor("green");
     }
 }

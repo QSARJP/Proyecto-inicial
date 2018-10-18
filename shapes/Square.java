@@ -1,9 +1,4 @@
 package shapes;
-import java.awt.*;
-import java.awt.geom.*;
-import java.util.Calendar;
-import java.lang.*;
-
 
 /**
  * Write a description of class Elipse here.
@@ -13,14 +8,6 @@ import java.lang.*;
  */
 public  class Square extends Figura
 {
-    public static double PI=3.1416;
-    private int side;
-    private int diameter;
-    private int xPosition;
-    private int yPosition;
-    private String color;
-    private boolean isVisible;
-    
     
     public Square(String color, double area, int xPosition, int yPosition)
     {
