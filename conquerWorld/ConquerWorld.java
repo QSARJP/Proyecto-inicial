@@ -290,7 +290,7 @@ public class ConquerWorld
             int cost = r.getCost();
             if (sizeArmyN1>0 &&(n1 != null && n2 != null)&&(sizeN1>0 && sizeN2 > 0)&& cost<=cash){
                 Army army = n1.removeArmy(0);
-                cash -= army.moveArmy(cash,cost,n2);
+                cash -= army.moveArmy(n1,cash,cost,n2);
                 indicador = true;
                 army.setAcumulado();
             }

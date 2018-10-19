@@ -25,7 +25,7 @@ public class UniqueArmy extends Army
         ejercito.makeVisible();
     }
     
-    public int moveArmy(int cash,int cost, Nation toNation){
+    public int moveArmy(Nation nation,int cash,int cost, Nation toNation){
         return 0;
     }
 }

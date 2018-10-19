@@ -26,7 +26,7 @@ public class ProactiveArmy extends Army
         ejercito.makeVisible();
     }
     
-    public int moveArmy(int cash,int cost, Nation toNation){
+    public int moveArmy(Nation nation,int cash,int cost, Nation toNation){
         acumulado += cost;
         for (int i = 0; i < 2;i++){
             toNation.addArmy(this);

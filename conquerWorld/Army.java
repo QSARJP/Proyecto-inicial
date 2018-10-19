@@ -40,5 +40,5 @@ public abstract class Army
     
     public abstract void drawArmy();
     
-    public abstract int moveArmy(int cash,int cost, Nation toNation);
+    public abstract int moveArmy(Nation nation,int cash,int cost, Nation toNation);
 }

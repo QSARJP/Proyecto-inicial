@@ -27,7 +27,16 @@ public class StingyArmy extends Army
         ejercito.makeVisible();
     }
     
-    public int moveArmy(int cash,int cost, Nation toNation){
-        return 0;
+    public int moveArmy(Nation nation,int cash,int cost, Nation toNation){
+        
+        if (nation.getNation() == toNation){
+            toNation.addArmy(this);
+            moveSlow(toNation);
+            acumulado += cost;
+            return acumulado;
+        }else{
+            return 0;
+        }
+        
     }
 }

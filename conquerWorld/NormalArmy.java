@@ -19,7 +19,7 @@ public class NormalArmy extends Army{
         ejercito.makeVisible();
     }
     
-    public int moveArmy(int cash,int cost, Nation toNation){
+    public int moveArmy(Nation nation,int cash,int cost, Nation toNation){
         toNation.addArmy(this);
         moveSlow(toNation);
         acumulado += cost;
