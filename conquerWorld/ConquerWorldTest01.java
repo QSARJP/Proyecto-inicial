@@ -631,7 +631,6 @@ public class ConquerWorldTest01
         cw.addArmy("blue","proactive");
         
         cw.moveArmy("blue","red");
-        System.out.println(cw.getNation("yellow").getArmies());
         assertTrue(cw.ok());
     }
     

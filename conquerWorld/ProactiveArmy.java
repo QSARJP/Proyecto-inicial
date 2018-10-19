@@ -30,7 +30,7 @@ public class ProactiveArmy extends Army
         acumulado += cost;
         for (int i = 0; i < 2;i++){
             toNation.addArmy(this);
-            moveSlow(toNation);
+            this.moveSlow(toNation);
             if(i + 1 != 2){
                 toNation.removeArmy(toNation.getSizeArmies()-1);
             }

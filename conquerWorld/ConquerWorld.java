@@ -57,6 +57,7 @@ public class ConquerWorld
         this.cash = amount;
         Figura medidor = new Rectangle("green",(double)50,0,0);
         medidor.makeVisible();
+        distintivo();
     }
     /**
      * Agrega una nación al mundo
