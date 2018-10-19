@@ -53,7 +53,7 @@ public abstract class Nation
         else if (type.equals("proactive")){
             armies.add(new ProactiveArmy(position));
         }
-        else if (type.equals("wanferer")){
+        else if (type.equals("wanderer")){
             armies.add(new WandererArmy(position));
         }
         else if (type.equals("stingy")){
@@ -76,6 +76,10 @@ public abstract class Nation
      * Limpia la lista de ejercitos de la nación actual
      */
     public void clearArmies(){
+        for (int i= 0; i<armies.size();i++){
+            Army army = armies.get(i);
+            army.erase();
+        }
         armies.clear();
     }
     /**
