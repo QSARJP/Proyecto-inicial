@@ -49,17 +49,16 @@ public abstract class Figura
         draw();
     }
     
-        public void slowMoveHorizontal(int xDistance){
+    public void slowMoveHorizontal(int xDistance){
         int delta;
-
         if(xDistance < 0) {
             delta = -1;
             xDistance = -xDistance;
         } else {
             delta = 1;
         }
-
-            for(int i = 0; i < xDistance; i++){
+  
+        for(int i = 0; i < xDistance; i++){
             xPosition += delta;
             draw();
         }
@@ -71,14 +70,13 @@ public abstract class Figura
      */
     public void slowMoveVertical(int distance){
         int delta;
-
         if(distance < 0) {
             delta = -1;
             distance = -distance;
         }else {
             delta = 1;
         }
-
+        
         for(int i = 0; i < distance; i++){
             yPosition += delta;
             draw();

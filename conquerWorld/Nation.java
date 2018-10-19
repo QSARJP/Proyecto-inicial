@@ -78,7 +78,7 @@ public abstract class Nation
     /**
      * Remueve la nacion de la lista de rutas de la nacion actual
      */
-    public abstract void removeRoute(String nation);
+    public abstract void removeRoute(Nation nation);
     
     public int getMenorCosto(){
         return rutas.firstKey();
@@ -102,6 +102,16 @@ public abstract class Nation
         }
         Collections.sort(listaRutas);
         return listaRutas;
+    }
+    public void elimiateRoute(Nation rNation){
+        for (int i: rutas.keySet()){
+            Nation n = rutas.get(i);
+            if (n == rNation){
+                rutas.remove(i);
+                break
+                ;
+            }
+        }
     }
     public int[] getPosition(){
         return position;
@@ -160,7 +170,9 @@ public abstract class Nation
      * Elimina la figura
      */
     public abstract void borrar();
-    
+    public ArrayList<Army>  getArmies(){
+        return armies;        
+    }
     /**
      * reset todas las arrayList que contiene el objeto Nation
      */

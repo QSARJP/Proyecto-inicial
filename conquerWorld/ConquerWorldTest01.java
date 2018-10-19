@@ -372,6 +372,7 @@ public class ConquerWorldTest01
         cw.moveArmy("blue", "red");
         assertTrue(cw.ok());       
         cw.moveArmy("red", "blue");
+        System.out.println(cw.ok());
         assertTrue(cw.ok());
     
         cw.addCash(11);
@@ -628,8 +629,9 @@ public class ConquerWorldTest01
         cw.addRoute(new String[]{"yellow", "black"}, 10);
         
         cw.addArmy("blue","proactive");
-        cw.moveArmy("blue","red");
         
+        cw.moveArmy("blue","red");
+        System.out.println(cw.getNation("yellow").getArmies());
         assertTrue(cw.ok());
     }
     

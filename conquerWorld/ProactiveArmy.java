@@ -9,7 +9,7 @@ import shapes.*;
  */
 public class ProactiveArmy extends Army
 {
-    protected Figura ejercito;
+    
     /**
      * Constructor for objects of class ProactiveArmy
      */
@@ -20,20 +20,28 @@ public class ProactiveArmy extends Army
     }
 
     public void drawArmy(){
-        Figura ejercito = new Square("orange",100,position[0],position[1]);
+        
+        Figura fig = new Square("orange",100,position[0],position[1]);
+        newFigura(fig);
         ejercito.makeVisible();
     }
     
     public int moveArmy(int cost, Nation toNation){
         acumulado += cost;
+      
         for (int i = 0; i < 2;i++){
+            System.out.println(toNation.getName());
+            System.out.println(toNation.getRoutes());
             toNation.addArmy(this);
-            System.out.println(ejercito);
-            this.moveSlow(toNation);
-            toNation.removeArmy(toNation.getSizeArmies()-1);
+            moveSlow(toNation);
+            if(i + 1 != 2){
+                toNation.removeArmy(toNation.getSizeArmies()-1);
+            }
             if(i>0){
                 acumulado += toNation.getMenorCosto();
+                
             }
+
             toNation = toNation.getNation();
         }
         return acumulado;

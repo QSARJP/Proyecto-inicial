@@ -175,8 +175,8 @@ public class ConquerWorld
             Route route1 = new Route(nations,cost);
             String[] nations2 = {nations[1],nations[0]}; 
             Route route2 = new Route(nations2,cost);
-            n1.addRoute(cost,n1);
-            n2.addRoute(cost,n2);
+            n1.addRoute(cost,n2);
+            n2.addRoute(cost,n1);
             routes.put(route1.getName(),route1);
             routes.put(route2.getName(),route2);
             indicador = true;
@@ -199,8 +199,8 @@ public class ConquerWorld
             if (r != null && r2!=null){
                 routes.remove(nations[0] + " - " + nations[1]);
                 routes.remove(nations[1] + " - " + nations[0]);
-                n1.removeRoute(nations[1]);
-                n2.removeRoute(nations[0]);
+                n1.removeRoute(n2);
+                n2.removeRoute(n1);
                 indicador = true; 
             }
             else{
@@ -284,13 +284,14 @@ public class ConquerWorld
         int sizeN2 = n2.getSizeRoutes();
         int sizeArmyN1 =n1.getSizeArmies();
         Route r = getRoute(fromNation + " - " + toNation);
+        
         if (r != null){
             int cost = r.getCost();
-            if (sizeArmyN1>0 &&(n1 != null && n2 != null)&&(sizeN1>0 && sizeN2 > 0)&& cost<cash){
+            if (sizeArmyN1>0 &&(n1 != null && n2 != null)&&(sizeN1>0 && sizeN2 > 0)&& cost<=cash){
                 Army army = n1.removeArmy(0);
                 cash -= army.moveArmy(cost,n2);
                 indicador = true;
-                
+                army.setAcumulado();
             }
             else{
                 indicador = false;

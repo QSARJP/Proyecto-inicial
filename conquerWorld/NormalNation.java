@@ -22,8 +22,8 @@ public class NormalNation extends Nation
         super(shape,area,color,position,armiesNeeded);
     }
     
-    public void removeRoute(String nation){
-        rutas.remove(nation);
+    public void removeRoute(Nation nation){
+        elimiateRoute(nation);
     }
     public void borrar(){
         Canvas canvas = Canvas.canvas;

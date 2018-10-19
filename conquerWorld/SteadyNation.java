@@ -23,7 +23,7 @@ public class SteadyNation extends Nation
         
     }
     
-    public void removeRoute(String nation){
+    public void removeRoute(Nation nation){
         
     }
     

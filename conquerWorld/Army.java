@@ -19,18 +19,21 @@ public abstract class Army
     public int getAcumulado(){
         return acumulado;
     }
-    
+    public void newFigura(Figura fig){
+        ejercito = fig;
+    }
     public void moveSlow(Nation toNation){
-        System.out.println(ejercito);
-        ejercito.makeVisible();
         int[] posicionFinal = toNation.getPosition();
         int xDistancia = posicionFinal[0] - position[0];
         int yDistancia = posicionFinal[1] - position[1];
         ejercito.slowMoveHorizontal(xDistancia);
         ejercito.slowMoveVertical(yDistancia);
-        ejercito.makeInvisible();
+        changePosition(posicionFinal);
     }
-    
+    private void changePosition(int[] newPosition){
+        position[0]=newPosition[0];
+        position[1]=newPosition[1];
+    }
     public void setAcumulado(){
         acumulado = 0;
     }
