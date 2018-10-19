@@ -16,6 +16,10 @@ public abstract class Army
         
     }
     
+    public void erase(){
+        ejercito.makeInvisible();
+    }
+    
     public int getAcumulado(){
         return acumulado;
     }

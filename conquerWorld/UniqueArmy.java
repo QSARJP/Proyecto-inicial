@@ -26,6 +26,9 @@ public class UniqueArmy extends Army
     }
     
     public int moveArmy(Nation nation,int cash,int cost, Nation toNation){
-        return 0;
+        acumulado += cost;
+        toNation.clearArmies();
+        toNation.addArmy(this);
+        return acumulado;
     }
 }

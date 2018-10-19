@@ -61,6 +61,7 @@ comment33.target=void\ segundGJDeberiaHacerZoom()
 comment34.params=
 comment34.target=void\ segunORDeberiaCrearProactive()
 comment35.params=
+<<<<<<< HEAD
 comment35.target=void\ segunORDeberiaCrearSteady()
 comment36.params=
 comment36.target=void\ segunORDeberiaCrearWanderer()
@@ -69,6 +70,14 @@ comment37.target=void\ segunORDeberiaCrearPositive()
 comment38.params=
 comment38.target=void\ tearDown()
 comment38.text=\r\n\ Tears\ down\ the\ test\ fixture.\r\n\r\n\ Called\ after\ every\ test\ case\ method.\r\n
+=======
+comment35.target=void\ segunORDeberiaEliminarLasArmies()
+comment36.params=
+comment36.target=void\ segunORDeberiaMoverStingy()
+comment37.params=
+comment37.target=void\ tearDown()
+comment37.text=\r\n\ Tears\ down\ the\ test\ fixture.\r\n\r\n\ Called\ after\ every\ test\ case\ method.\r\n
+>>>>>>> 58bc28e5881c4e216f85e406dc33979e9f884773
 comment4.params=
 comment4.target=void\ shouldNotAddNationsWithTheSameColor()
 comment5.params=
@@ -81,4 +90,8 @@ comment8.params=
 comment8.target=void\ shoudNotAddRoutesToNonExistentNations()
 comment9.params=
 comment9.target=void\ shouldAddArmy()
+<<<<<<< HEAD
 numComments=39
+=======
+numComments=38
+>>>>>>> 58bc28e5881c4e216f85e406dc33979e9f884773
