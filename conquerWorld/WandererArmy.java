@@ -31,7 +31,7 @@ public class WandererArmy extends Army
         while (cash<toNation.getMenorCosto()){
             toNation.addArmy(this);
             moveSlow(toNation);
-            if(i + 1 != 2){
+            if(cash - toNation.getMenorCosto() > 0 ){
                 toNation.removeArmy(toNation.getSizeArmies()-1);
             }
             if(i>0){
