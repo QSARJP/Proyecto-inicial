@@ -22,6 +22,8 @@ public class SteadyArmy extends Army
     }
     
     public int moveArmy(Nation nation,int cash,int cost, Nation toNation){
+        nation.addArmy(this);
+        moveSlow(nation);
         return 0;
     }
 }

@@ -613,7 +613,7 @@ public class ConquerWorldTest01
         assertTrue(cw.ok());
         
     }
-
+    //--------------------Ciclo4---------------------------------------
     @Test
     public void segunORDeberiaCrearProactive(){
         ConquerWorld cw = new ConquerWorld(500, 500);
@@ -633,7 +633,62 @@ public class ConquerWorldTest01
         cw.moveArmy("blue","red");
         assertTrue(cw.ok());
     }
-    
+    @Test
+    public void segunORDeberiaCrearSteady(){
+        ConquerWorld cw = new ConquerWorld(500, 500);
+        cw.addNation("Triangle", 500, "blue", new int[]{100, 20}, 3);
+        cw.addNation("Rectangle", 400, "red", new int[]{200 , 300}, 2);
+        cw.addNation("Square", 500, "yellow", new int[]{300, 200}, 3);
+        cw.addNation("Circle", 400, "black", new int[]{450 , 300}, 2);    
+        assertTrue(cw.ok());
+        
+        cw.addCash(50);
+        cw.addRoute(new String[]{"blue", "red"}, 10);
+        cw.addRoute(new String[]{"red", "yellow"}, 10);
+        cw.addRoute(new String[]{"yellow", "black"}, 10);
+        
+        cw.addArmy("blue","steady");
+        cw.moveArmy("blue","red");
+        assertEquals(cw.getNation("red").getSizeArmies(),0);
+        assertEquals(cw.getNation("blue").getSizeArmies(),1);
+        assertEquals(cw.getCash(),50);
+    }
+    @Test
+    public void segunORDeberiaCrearWanderer(){
+        ConquerWorld cw = new ConquerWorld(500, 500);
+        cw.addNation("Triangle", 500, "blue", new int[]{100, 20}, 3);
+        cw.addNation("Rectangle", 400, "red", new int[]{200 , 300}, 2);
+        cw.addNation("Square", 500, "yellow", new int[]{300, 200}, 3);
+        cw.addNation("Circle", 400, "black", new int[]{450 , 300}, 2);    
+        assertTrue(cw.ok());
+        
+        cw.addCash(70);
+        cw.addRoute(new String[]{"blue", "red"}, 30);
+        cw.addRoute(new String[]{"red", "yellow"},20);
+        cw.addRoute(new String[]{"yellow", "black"}, 10);
+        
+        cw.addArmy("blue","wanderer");
+        assertTrue(cw.ok());
+        cw.moveArmy("blue","red");
+        assertEquals(cw.getNation("blue").getSizeArmies(),0);
+        assertEquals(cw.getNation("yellow").getSizeArmies(),1);
+    }
+    @Test
+    public void segunORDeberiaCrearPositive(){
+        ConquerWorld cw = new ConquerWorld(500, 500);
+        cw.addNation("Triangle", 500, "blue", new int[]{100, 20}, 3);
+        cw.addNation("Rectangle", 400, "red", new int[]{200 , 300}, 2);
+         
+        assertTrue(cw.ok());
+        
+        cw.addCash(70);
+        cw.addRoute(new String[]{"blue", "red"}, 30);
+        
+        cw.addArmy("blue","positive");
+        assertTrue(cw.ok());
+        cw.moveArmy("blue","red");
+        assertEquals(cw.getCash(),100);
+    }
     /**
      * Tears down the test fixture.
      *

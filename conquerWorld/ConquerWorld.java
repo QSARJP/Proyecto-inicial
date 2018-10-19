@@ -42,6 +42,9 @@ public class ConquerWorld
     public Route getRoute(String route){
         return routes.get(route);
     }
+    public int getCash(){
+        return cash;
+    }
     /**
      *Remueve una nación del conquerworld
      *@param nation Nombre de la nacion que se va a remover

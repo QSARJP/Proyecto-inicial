@@ -26,17 +26,20 @@ public class WandererArmy extends Army
     }
     
     public int moveArmy(Nation nation,int cash,int cost, Nation toNation){
-        acumulado += cost;
+        int cash2 = cash;
         int i =0;
-        while (cash<toNation.getMenorCosto()){
+        acumulado += cost;
+        while (cash2>=nation.getMenorCosto()){
             toNation.addArmy(this);
             moveSlow(toNation);
-            if(cash - toNation.getMenorCosto() > 0 ){
+            cash2-=nation.getMenorCosto();
+            if(cash2 - nation.getMenorCosto() >= 0 ){
                 toNation.removeArmy(toNation.getSizeArmies()-1);
             }
             if(i>0){
-                acumulado += toNation.getMenorCosto();
+                acumulado += nation.getMenorCosto();
             }
+            nation = toNation;
             toNation = toNation.getNation();
             i+=1;
         }
