@@ -634,6 +634,45 @@ public class ConquerWorldTest01
         assertTrue(cw.ok());
     }
     
+    @Test
+    public void segunORDeberiaEliminarLasArmies(){
+        ConquerWorld cw = new ConquerWorld(500, 500);
+        cw.addNation("Triangle", 500, "blue", new int[]{100, 20}, 3);
+        cw.addNation("Rectangle", 400, "red", new int[]{200 , 300}, 2);
+        assertTrue(cw.ok());
+        
+        cw.addArmy("blue","normal");
+        cw.addArmy("blue","normal");
+        cw.addArmy("blue","normal");
+        cw.addArmy("blue","normal");
+        
+        cw.addCash(50);
+        
+        cw.addArmy("red","unique");
+        cw.addRoute(new String[]{"red", "blue"}, 10);
+        cw.moveArmy("red","blue");
+        Nation n = cw.getNation("blue");
+        assertEquals(n.getSizeArmies(),1);
+    }
+    
+    @Test
+    public void segunORDeberiaMoverStingy(){
+        ConquerWorld cw = new ConquerWorld(500, 500);
+        cw.addNation("Triangle", 500, "blue", new int[]{100, 20}, 3);
+        cw.addNation("Rectangle", 400, "red", new int[]{200 , 300}, 2);
+        cw.addNation("Square", 500, "yellow", new int[]{300, 200}, 3);
+        assertTrue(cw.ok());
+        
+        cw.addCash(50);
+        
+        cw.addRoute(new String[]{"red", "blue"}, 10);
+        cw.addRoute(new String[]{"red", "yellow"}, 20);
+        
+        cw.addArmy("red","stingy");
+        cw.moveArmy("red","blue");
+        //assertEquals(cw.getCash(),40);
+    }
+    
     /**
      * Tears down the test fixture.
      *
