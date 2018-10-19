@@ -14,11 +14,12 @@ public class NormalArmy extends Army{
     }
     
     public void drawArmy(){
-        ejercito = new Circle("orange",100,position[0],position[1]);
+        Figura fig = new Circle("orange",100,position[0],position[1]);
+        newFigura(fig);
         ejercito.makeVisible();
     }
     
-    public int moveArmy(int cost,Nation toNation){
+    public int moveArmy(int cash,int cost, Nation toNation){
         toNation.addArmy(this);
         moveSlow(toNation);
         acumulado += cost;

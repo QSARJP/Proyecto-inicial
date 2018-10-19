@@ -53,6 +53,15 @@ public abstract class Nation
         else if (type.equals("proactive")){
             armies.add(new ProactiveArmy(position));
         }
+        else if (type.equals("wanferer")){
+            armies.add(new WandererArmy(position));
+        }
+        else if (type.equals("stingy")){
+            armies.add(new StingyArmy(position));
+        }
+        else if (type.equals("unique")){
+            armies.add(new UniqueArmy(position));
+        }
     }
     public void addArmy(Army ejercito){
         armies.add(ejercito);
