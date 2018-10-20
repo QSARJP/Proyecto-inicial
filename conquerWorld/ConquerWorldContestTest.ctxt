@@ -1,0 +1,21 @@
+#BlueJ class context
+comment0.target=ConquerWorldContestTest
+comment0.text=\r\n\ *\ The\ test\ class\ ConquerWorldContestTest.*\r\n\ \r\n\ @author\ Dur\uFFFDn-Jaramillo\r\n\ \r\n\ @version\ (a\ version\ 28/09/18\r\n
+comment1.params=
+comment1.target=ConquerWorldContestTest()
+comment1.text=Default\ constructor\ for\ test\ class\ ConquerWorldContestTest
+comment2.params=
+comment2.target=void\ segunFDDeberiaDar15()
+comment3.params=
+comment3.target=void\ segunFDDeberiaDar9()
+comment4.params=
+comment4.target=void\ segunFDDeberiaDar1551401()
+comment5.params=
+comment5.target=void\ segunDJAnswerShouldBeCero()
+comment6.params=
+comment6.target=void\ segunDJAnswerShouldBeCorrect()
+comment7.params=
+comment7.target=void\ segunBSAnswerShouldBeZero()
+comment8.params=
+comment8.target=void\ segunBSAnswerShouldBeCorrect()
+numComments=9
