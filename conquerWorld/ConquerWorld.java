@@ -356,9 +356,17 @@ public class ConquerWorld
      */
     public void removeNation(String nation){
         Nation n = getNation(nation);
-        if (n != null && n.getSizeRoutes() == 0){
+        if (n != null && !(n instanceof SteadyNation)){
             n.borrar();
             removeN(nation);
+            for (String i : routes.keySet()){
+                Route r = routes.get(i);
+                if (nation.equals(r.getOrigin()) || nation.equals(r.getDestiny()) ){
+                    String[] ruta = {r.getOrigin(),r.getDestiny()};
+                    r.borrarLinea();
+                    removeRoute(ruta);
+                }
+            }
             indicador = true;
         }
         else{

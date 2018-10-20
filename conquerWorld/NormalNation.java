@@ -18,7 +18,6 @@ public class NormalNation extends Nation
      */
     public NormalNation(String shape, int area, String color, int[] position, int armiesNeeded)
     {
-        // initialise instance variables
         super(shape,area,color,position,armiesNeeded);
     }
     

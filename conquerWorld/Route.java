@@ -36,7 +36,9 @@ public class Route
     public String getDestiny(){
         return n2;
     }
-
+    public void borrarLinea(){
+        line.makeInvisible();
+    }
     /**
      * Crea la linea que representa la ruta desde la nación A hasta la nación B
      */

@@ -65,8 +65,6 @@ public abstract class Nation
         else if (type.equals("positive")){
             armies.add(new PositiveArmy(position));
         }
-        
-
     }
     public void addArmy(Army ejercito){
         armies.add(ejercito);
