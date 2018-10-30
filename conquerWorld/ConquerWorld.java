@@ -200,7 +200,7 @@ public class ConquerWorld
             Route r2 = getRoute(nations[1] + " - " + nations[0]);
             Nation n1 = getNation(nations[0]);
             Nation n2 = getNation(nations[1]);
-            if (r != null && r2!=null){
+            if (r != null && r2!=null && !(n1 instanceof SteadyNation) && !(n2 instanceof SteadyNation)){
                 routes.remove(nations[0] + " - " + nations[1]);
                 routes.remove(nations[1] + " - " + nations[0]);
                 n1.removeRoute(n2);

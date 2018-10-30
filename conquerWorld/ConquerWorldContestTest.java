@@ -27,6 +27,7 @@ public class ConquerWorldContestTest {
 		int[][] routes = {{1, 2, 5}, {3, 1, 5}};
 		
 		int[][] armies = {{2, 1}, {5, 0}, {1, 3}};
+		cwc.simulate(routes, armies,true);
 		assertEquals(cwc.solve(routes, armies), 15);
 	}
 	

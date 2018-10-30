@@ -16,6 +16,7 @@ public class ConquerWorldContest
     final static int INF =999999999;
     private int V;
     private ArrayList<Integer> visitados;
+    public ConquerWorld cw;
     
     /**
      * Constructor for objects of class ConquerWorldContest
@@ -31,15 +32,7 @@ public class ConquerWorldContest
         }
         V=l;
     }
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int solve(int routes[][],int [][] armies)
-    {
-        node(armies);
+    private int[][] crearMatriz(int[][] routes){
         int [] lista ={0,0};
         int dist[][] = new int[V][V];
         for (int i = 0; i < V; i++) {
@@ -59,7 +52,9 @@ public class ConquerWorldContest
             dist[lista[0]-1][lista[1]-1]=result;
             dist[lista[1]-1][lista[0]-1]=result;
         }
-        
+        return dist;
+    }
+    private int[][] floydWarshall(int[][] dist){
         for (int k = 0; k < V; k++) 
         { 
             for (int i = 0; i < V; i++) 
@@ -71,6 +66,19 @@ public class ConquerWorldContest
                 } 
             } 
         } 
+        return dist;
+    }
+    /**
+     * An example of a method - replace this comment with your own
+     *
+     * @param  y  a sample parameter for a method
+     * @return    the sum of x and y
+     */
+    public int solve(int routes[][],int [][] armies)
+    {
+        node(armies);
+        int dist[][]=crearMatriz(routes);
+        dist = floydWarshall(dist);
         ArrayList<Integer> conquistados = new ArrayList<>();
         int node = 0,indice=0,cost=0;
         while (conquistados.size() < V && node < V){
@@ -90,6 +98,42 @@ public class ConquerWorldContest
         }
         System.out.println(cost);
         return cost;
+    }
+    /**
+     * An example of a method - replace this comment with your own
+     *
+     * @param  y  a sample parameter for a method
+     * @return    the sum of x and y
+     */
+    public int simulate(int routes[][],int [][] armies,boolean slow){
+        node(armies);
+        ConquerWorld cw = new ConquerWorld(500, 500);
+        int dist[][]=crearMatriz(routes);
+        printSolution(dist);
+        String color [] = {"green","black","blue","yellow","magenta","pink","red","cyan","orange","gray"};
+        String shape [] = {"Circle","Triangle","Rectangle","Elipse","Square"};
+        for (int i = 0 ; i<V ; i++){
+            int x = (int) (Math.random() * 500) ;
+            int y = (int) (Math.random() * 500);
+            int pos[] = {x,y};
+            int colorR = (int) (Math.random() * 9) ;
+            int shapeR = (int) (Math.random() * 4) ;
+            cw.addNation(shape[shapeR],50,color[colorR],pos,armies[i][0]);
+            
+        }
+        ArrayList<Route> routas = new ArrayList<>();
+        for (int i = 0 ; i<V ; i++){
+            for (int j = 0 ; i<V ; i++){
+                
+                if (dist[i][j]!=INF && routas.contains(cw.getNations().get(i)) ){
+                    
+                    /*cw.addRoute(ruta);*/
+                    
+                }
+            }
+        }
+        
+        return V;
     }
     private int valorMinimo(int[] lista){
         int min=INF;
