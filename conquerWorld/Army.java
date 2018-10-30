@@ -1,6 +1,14 @@
 package conquerWorld;
 import shapes.*;
 
+
+/**
+ * clase Army contiene las superclase y los metodos comunes para todas las amies
+ *
+ * @author Ospina-Rivera
+ * 
+ * @version (a version 28/10/18)
+ */
 public abstract class Army
 {
     // instance variables - replace the example below with your own

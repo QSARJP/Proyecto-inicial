@@ -3,10 +3,11 @@ package conquerWorld;
 import java.util.*;
 import shapes.*;
 /**
- * Write a description of class NationSteady here.
+ * clase NationSteady no se puede eliminar ni mover.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Ospina-Rivera
+ * 
+ * @version (a version 28/10/18)
  */
 public class SteadyNation extends Nation
 {

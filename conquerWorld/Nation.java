@@ -3,10 +3,11 @@ import java.util.*;
 import shapes.*;
 
 /**
- * Write a description of class Nation here.
+ * clase Nation contiene la superclase de naciones y tiene todos los metodos comunes para ellas.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Ospina-Rivera
+ * 
+ * @version (a version 28/10/18)
  */
 public abstract class Nation
 {

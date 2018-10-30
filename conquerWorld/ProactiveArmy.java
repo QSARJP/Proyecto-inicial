@@ -2,10 +2,11 @@ package conquerWorld;
 import shapes.*;
 
 /**
- * Write a description of class ProactiveArmy here.
+ * clase ProactiveArmy se sabe mover dos veces mientras que haya cash.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Ospina-Rivera
+ * 
+ * @version (a version 28/10/18)
  */
 public class ProactiveArmy extends Army
 {

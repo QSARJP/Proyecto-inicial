@@ -2,10 +2,11 @@ package conquerWorld;
 import shapes.*;
 
 /**
- * Write a description of class uniqueArmy here.
+ * clase uniqueArmy cuando llega a la otra nacion elimina todas las armies de la otra nacion.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Ospina-Rivera
+ * 
+ * @version (a version 28/10/18)
  */
 public class UniqueArmy extends Army
 {

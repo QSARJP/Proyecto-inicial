@@ -4,10 +4,11 @@ import java.util.*;
 import java.util.Collections;
 import shapes.*;
 /**
- * Write a description of class ConquerWorld here.
+ * clase ConquerWorld genera toda la ambientacion del juego y es el que controla la creacion del mundo y la creacion de sus partes.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Ospina-Rivera
+ * 
+ * @version (a version 28/10/18)
  */
 public class ConquerWorld
 {

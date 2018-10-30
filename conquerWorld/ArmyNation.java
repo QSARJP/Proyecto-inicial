@@ -3,10 +3,11 @@ import java.util.*;
 import shapes.*;
 
 /**
- * Write a description of class ArmyNation here.
+ * clase ArmyNation contiene armies al momento de su creacion.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Ospina-Rivera
+ * 
+ * @version (a version 28/10/18)
  */
 public class ArmyNation extends Nation
 {

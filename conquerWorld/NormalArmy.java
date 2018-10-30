@@ -2,7 +2,7 @@ package conquerWorld;
 import shapes.*;
 
 /**
- * Write a description of class NormalArmy here.
+ * Wclase NormalArmy es una army normal.
  *
  * @author (your name)
  * @version (a version number or a date)
@@ -16,7 +16,7 @@ public class NormalArmy extends Army{
      * Dibuja el army en el conquer world
      */    
     public void drawArmy(){
-        Figura fig = new Circle("orange",100,position[0],position[1]);
+        Figura fig = new Circle("darkGray",100,position[0],position[1]);
         newFigura(fig);
         ejercito.makeVisible();
     }

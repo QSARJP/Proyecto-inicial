@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=ConquerWorldTest01
-comment0.text=\r\n\ The\ test\ class\ ConquerWorldTest01.\r\n\r\n\ @author\ \ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ *\ The\ test\ class\ ConquerWorldContestTest.*\r\n\ \r\n\ @author\ Ospina-Rivera\r\n\ \r\n\ @version\ (a\ version\ 28/10/18)\r\n
 comment1.params=
 comment1.target=ConquerWorldTest01()
 comment1.text=\r\n\ Default\ constructor\ for\ test\ class\ ConquerWorldTest01\r\n

@@ -3,10 +3,11 @@ import shapes.*;
 
 import java.util.*;
 /**
- * Write a description of class Route here.
+ * Clase Routa
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Ospina-Rivera
+ * 
+ * @version (a version 28/10/18)
  */
 public class Route
 {

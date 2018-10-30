@@ -2,10 +2,11 @@ package conquerWorld;
 import shapes.*;
 
 /**
- * Write a description of class SteadyArmy here.
+ * clase SteadyArmy no se puede mover .
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Ospina-Rivera
+ * 
+ * @version (a version 28/10/18)
  */
 public class SteadyArmy extends Army
 {

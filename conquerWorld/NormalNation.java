@@ -3,10 +3,11 @@ import java.util.*;
 import shapes.*;
 
 /**
- * Write a description of class NationNormal here.
+ * clase NationNormal es una nacion sin ninguna especificacion.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Ospina-Rivera
+ * 
+ * @version (a version 28/10/18)
  */
 public class NormalNation extends Nation
 {

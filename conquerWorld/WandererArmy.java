@@ -2,10 +2,11 @@ package conquerWorld;
 import shapes.*;
 
 /**
- * Write a description of class wandererArmy here.
+ * clase wandererArmy solamente se mueve hasta que se queda sin cash.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Ospina-Rivera
+ * 
+ * @version (a version 28/10/18)
  */
 public class WandererArmy extends Army
 {

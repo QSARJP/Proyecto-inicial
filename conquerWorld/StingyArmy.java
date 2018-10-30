@@ -2,10 +2,11 @@ package conquerWorld;
 import shapes.*;
 
 /**
- * Write a description of class stingyArmy here.
+ * clase stingyArmy si es la de menor costo la otra nacion se mueve de lo contrario no .
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Ospina-Rivera
+ * 
+ * @version (a version 28/10/18)
  */
 public class StingyArmy extends Army
 {

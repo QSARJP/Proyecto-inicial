@@ -5,10 +5,11 @@ import java.lang.*;
 import java.io.*;
 import java.util.concurrent.TimeUnit;
 /**
- * Write a description of class ConquerWorldContest here.
+ * En ConquerWorldContest se realiza las especificaciones del ciclo 3
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Ospina-Rivera
+ * 
+ * @version (a version 28/10/18)
  */
 public class ConquerWorldContest
 {
@@ -24,8 +25,11 @@ public class ConquerWorldContest
      */
     public ConquerWorldContest()
     {
-        
+      
     }
+    /*
+     * revisa cuantos nodos tiene y actualiza el dato en una vaiable gobal en la clase
+     */  
     private void node(int [][] armies){
         int l=0;
         for (int[] i : armies){
@@ -33,6 +37,9 @@ public class ConquerWorldContest
         }
         V=l;
     }
+    /*
+     * crea una matriz de 'Inf' dependiendo de los nodos
+     */  
     private int[][] crearMatriz(int[][] routes){
         int [] lista ={0,0};
         int dist[][] = new int[V][V];
@@ -55,6 +62,9 @@ public class ConquerWorldContest
         }
         return dist;
     }
+    /*
+     * realiza el algortimo de ruta mas corta floydWrshall
+     */  
     private int[][] floydWarshall(int[][] dist){
         for (int k = 0; k < V; k++) 
         { 
@@ -70,10 +80,11 @@ public class ConquerWorldContest
         return dist;
     }
     /**
-     * An example of a method - replace this comment with your own
+     * Realiza la solucion de la maraton ConquerWorld
      *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * @param     routes [][]  una matriz de rutas
+     * @param     armies [][]  una matriz de armies
+     * @return    la solucion del ejercicio
      */
     public int solve(int routes[][],int [][] armies)
     {
@@ -101,10 +112,12 @@ public class ConquerWorldContest
         return cost;
     }
     /**
-     * An example of a method - replace this comment with your own
+     * Simula un ambiente de conquista de mundo pero solo si el numero de nodos es menor al los colores
      *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * @param     routes [][]  una matriz de rutas
+     * @param     armies [][]  una matriz de armies
+     * @param     slow si se desa ver la simualcion despacio o rapido
+     * @return    la solucion del ejercicio
      */
     public int simulate(int routes[][],int [][] armies,boolean slow){
         node(armies);
@@ -117,21 +130,25 @@ public class ConquerWorldContest
                 if (dist[i][j]!=INF){
                     String [] routa = {cw.getNations().get(i),cw.getNations().get(j)};
                     cw.addRoute(routa,dist[i][j]);
-                    try
-                    {
-                        Thread.sleep(1000);
-                    }
-                    catch(InterruptedException ex)
-                    {
-                        Thread.currentThread().interrupt();
+                    if (slow ==true){
+                        try
+                        {
+                            Thread.sleep(250);
+                        }
+                        catch(InterruptedException ex)
+                        {
+                            Thread.currentThread().interrupt();
+                        }
                     }
                 }
             }
         }
-        
-        int cost = solveSimualte(dist,armies,cw);
+        int cost = solveSimualte(dist,armies,cw,slow);
         return cost;
     }
+    /*
+     * registra las naciones graficamento en la simualcion
+     */
     private void addNations(int [][] armies,ConquerWorld cw){
         String color [] = {"green","black","blue","yellow","magenta","pink","red","cyan","orange","gray","darkGray","lightGray"};
         String shape [] = {"Circle","Triangle","Rectangle","Elipse","Square"};
@@ -146,18 +163,15 @@ public class ConquerWorldContest
                 shapeR = (int) (Math.random() * 4) ;
             }
             cw.addNation(shape[shapeR],500,color[colorR],pos,armies[i][1]);
-            System.out.println(armies[i][0]);
-            if (armies[i][0] <1){
-            }else if (armies[i][0] <2){
+            for (int j =0 ; j<armies[i][0];j++){
                 cw.addArmy(color[colorR]);
-            }else{
-                for (int j =0 ; j<armies[i][0];j++){
-                    cw.addArmy(color[colorR]);
-                }
             }
-        }  
+        }
     }
-    private int solveSimualte(int dist[][],int [][] armies,ConquerWorld cw)
+    /*
+     * soluciona la simualcion pero teniendo en cuenta el movimeinto de las armies
+     */
+    private int solveSimualte(int dist[][],int [][] armies,ConquerWorld cw,boolean slow)
     {
         dist = floydWarshall(dist);
         ArrayList<Integer> conquistados = new ArrayList<>();
@@ -171,14 +185,17 @@ public class ConquerWorldContest
                     armies[node][0] +=1;
                     cw.moveArmy(cw.getNations().get(indice),cw.getNations().get(node));
                     cost +=dist[node][indice];
-                    try
-                    {
-                        Thread.sleep(500);
+                    if (slow==true){
+                        try
+                        {
+                            Thread.sleep(250);
+                        }
+                        catch(InterruptedException ex)
+                        {
+                            Thread.currentThread().interrupt();
+                        }
                     }
-                    catch(InterruptedException ex)
-                    {
-                        Thread.currentThread().interrupt();
-                    }
+                    
                 }else{
                     visitados.add(indice);
                 }
@@ -189,6 +206,9 @@ public class ConquerWorldContest
         System.out.println(cost);
         return cost;
     }
+    /*
+     * es el valor minimo de una lista
+     */
     private int valorMinimo(int[] lista){
         int min=INF;
         int indice=0;
@@ -207,6 +227,9 @@ public class ConquerWorldContest
         }   
         return indice;
     }
+    /*
+     * imprime la solucion matricialmente
+     */
     private void printSolution(int dist[][]) 
     { 
         for (int i=0; i<V; ++i) 

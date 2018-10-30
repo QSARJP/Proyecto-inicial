@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Nation
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Nation\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ clase\ Nation\ contiene\ la\ superclase\ de\ naciones\ y\ tiene\ todos\ los\ metodos\ comunes\ para\ ellas.\r\n\r\n\ @author\ Ospina-Rivera\r\n\ \r\n\ @version\ (a\ version\ 28/10/18)\r\n
 comment1.params=shape\ area\ color\ position\ armiesNeeded
 comment1.target=Nation(java.lang.String,\ int,\ java.lang.String,\ int[],\ int)
 comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Nation\r\n\ @param\ shape\ Indica\ la\ forma\ de\ la\ nacion\r\n\ @param\ area\ Indica\ el\ area\ que\ tendra\ la\ nacion\ en\ el\ conquerWorld\r\n\ @param\ color\ Indica\ el\ color\ y\ el\ nombre\ de\ la\ naci\u00F3n\r\n\ @param\ position\ Indica\ las\ coordenas\ x\ y\ y\ donde\ se\ ubicar\u00E1\ la\ naci\u00F3n\r\n\ @param\ armiesNeeded\ Indica\ los\ ejercitos\ que\ son\ necesarios\ para\ conquistar\ la\ naci\u00F3n\r\n

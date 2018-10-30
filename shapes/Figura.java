@@ -7,10 +7,11 @@ import java.lang.*;
 
 
 /**
- * Abstract class Shape - write a description of the class here
+ * Se realiza la superclase figura la cual contiene todos los emtodos necesarios para su representacion
  *
- * @author (your name here)
- * @version (version number or date here)
+ * @author Ospina-Rivera
+ * 
+ * @version (a version 28/10/18)
  */
 public abstract class Figura
 {
@@ -34,7 +35,7 @@ public abstract class Figura
         draw();
     }
     /**
-     * vuelve invisible el circulo
+     * vuelve invisible el figura
      */
     public void makeInvisible(){
         erase();
@@ -48,7 +49,10 @@ public abstract class Figura
         color = newColor;
         draw();
     }
-    
+    /**
+     * Slowly move the figura horizontal
+     * @param distance the desired distance in pixels
+     */
     public void slowMoveHorizontal(int xDistance){
         int delta;
         if(xDistance < 0) {
@@ -60,12 +64,20 @@ public abstract class Figura
   
         for(int i = 0; i < xDistance; i++){
             xPosition += delta;
+            try
+            {
+              Thread.sleep(5);
+            }
+            catch(InterruptedException ex)
+            {
+                Thread.currentThread().interrupt();
+            }
             draw();
         }
     }
     
         /**
-     * Slowly move the circle vertically
+     * Slowly move the figura vertically
      * @param distance the desired distance in pixels
      */
     public void slowMoveVertical(int distance){
@@ -79,12 +91,20 @@ public abstract class Figura
         
         for(int i = 0; i < distance; i++){
             yPosition += delta;
+            try
+            {
+              Thread.sleep(5);
+            }
+            catch(InterruptedException ex)
+            {
+                Thread.currentThread().interrupt();
+            }
             draw();
         }
     }
     
     /**
-     * Erase the circle on screen.
+     * Erase the figura on screen.
      */
     private void erase(){
         if(isVisible) {

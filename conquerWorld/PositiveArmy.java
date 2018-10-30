@@ -2,10 +2,11 @@ package conquerWorld;
 import shapes.*;
 
 /**
- * Write a description of class NormalArmy here.
+ * clase PositiveArmy es una armie nque en vez de restar costo suma su valor al cash.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Ospina-Rivera
+ * 
+ * @version (a version 28/10/18)
  */
 public class PositiveArmy extends Army{
     public PositiveArmy(int[] position){

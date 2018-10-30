@@ -7,8 +7,9 @@ import java.lang.*;
 /**
  * Write a description of class Circle here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Ospina-Rivera
+ * 
+ * @version (a version 28/10/18)
  */
 public class Circle extends Figura
 {

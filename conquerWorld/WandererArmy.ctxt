@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=WandererArmy
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ wandererArmy\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ clase\ wandererArmy\ solamente\ se\ mueve\ hasta\ que\ se\ queda\ sin\ cash.\r\n\r\n\ @author\ Ospina-Rivera\r\n\ \r\n\ @version\ (a\ version\ 28/10/18)\r\n
 comment1.params=position
 comment1.target=WandererArmy(int[])
 comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ wandererArmy\r\n
