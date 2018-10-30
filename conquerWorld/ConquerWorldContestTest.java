@@ -1,7 +1,5 @@
 package conquerWorld;
 
-
-
 import static org.junit.Assert.*;
 
 import org.junit.Test;
@@ -25,9 +23,7 @@ public class ConquerWorldContestTest {
 	public void segunFDDeberiaDar15() {
 		ConquerWorldContest cwc = new ConquerWorldContest();
 		int[][] routes = {{1, 2, 5}, {3, 1, 5}};
-		
 		int[][] armies = {{2, 1}, {5, 0}, {1, 3}};
-		cwc.simulate(routes, armies,true);
 		assertEquals(cwc.solve(routes, armies), 15);
 	}
 	
@@ -45,6 +41,30 @@ public class ConquerWorldContestTest {
 		int[][] routes = {{9, 8, 496505}, {8, 6, 520177}, {7, 2, 548308}, {8, 1, 185315}, {8, 2, 580281}, {7, 10, 346922}, {4, 6, 648961}, {3, 6, 527448}, {5, 6, 986735}};
 		int[][] armies = {{6, 3},{3, 2},{0, 2},{3, 3},{2, 0},{4, 1},{0, 0},{3, 1},{1, 2},{3, 1}};
 		assertEquals(cwc.solve(routes, armies), 1551401);
+	}
+	
+	@Test
+	public void segunFDDeberiaSimular15() {
+		ConquerWorldContest cwc = new ConquerWorldContest();
+		int[][] routes = {{1, 2, 5}, {3, 1, 5}};
+		int[][] armies = {{2, 1}, {5, 0}, {1, 3}};
+		assertEquals(cwc.simulate(routes, armies,true), 15);
+	}
+	
+	@Test
+	public void segunFDDeberiaSimular9() {
+		ConquerWorldContest cwc = new ConquerWorldContest();
+		int[][] routes = {{1, 2, 2}, {1, 3, 5}, {1, 4, 1}, {2, 5, 5}, {2, 6, 1}};
+		int[][] armies = {{0, 0}, {1, 0}, {2, 1}, {2, 1}, {0, 1}, {0, 1}};
+		assertEquals(cwc.simulate(routes, armies,true), 9);
+	}
+	
+	@Test
+	public void segunFDDeberiaSimulate1551401() {
+		ConquerWorldContest cwc = new ConquerWorldContest();
+		int[][] routes = {{9, 8, 496505}, {8, 6, 520177}, {7, 2, 548308}, {8, 1, 185315}, {8, 2, 580281}, {7, 10, 346922}, {4, 6, 648961}, {3, 6, 527448}, {5, 6, 986735}};
+		int[][] armies = {{6, 3},{3, 2},{0, 2},{3, 3},{2, 0},{4, 1},{0, 0},{3, 1},{1, 2},{3, 1}};
+		assertEquals(cwc.simulate(routes, armies,true), 1551401);
 	}
 	
 	//Student cases
@@ -519,7 +539,9 @@ public class ConquerWorldContestTest {
 				{ 0, 0 }, { 0, 0 }, { 0, 0 }, { 0, 0 }, { 0, 0 }, { 0, 0 }, { 0, 0 }, { 0, 0 }, { 0, 0 }, { 0, 1 },
 				{ 0, 0 }, { 0, 0 }, { 0, 0 }, { 0, 0 } };
 
-		assertTrue(cwc.solve(routes, armies) == 217791800);
+		int ans = cwc.solve(routes, armies);
+
+		assertTrue(ans == 217791800);
 
 	}
 
@@ -530,7 +552,7 @@ public class ConquerWorldContestTest {
 		int armies[][] = { { 1329, 686 }, { 2567, 810 }, { 376, 82 } };
 		assertTrue(cwc.solve(routes, armies) == 0);
 	}
-
+        
 	@Test
 	public void segunBSAnswerShouldBeCorrect() {
 		ConquerWorldContest cwc = new ConquerWorldContest();
@@ -540,5 +562,23 @@ public class ConquerWorldContestTest {
 				{ 4, 11 } };
 		assertTrue(cwc.solve(routes, armies) == 12379051);
 	}
+	/*
+	@Test
+	public void segunBSAnswerShouldSimulateZero() {
+		ConquerWorldContest cwc = new ConquerWorldContest();
+		int routes[][] = { { 3, 2, 795499 }, { 3, 1, 97299 } };
+		int armies[][] = { { 1329, 686 }, { 2567, 810 }, { 376, 82 } };
+		assertTrue(cwc.simulate(routes, armies,true) == 0);
+	}
+
+	@Test
+	public void segunBSAnswerShouldSimualteCorrect() {
+		ConquerWorldContest cwc = new ConquerWorldContest();
+		int routes[][] = { { 5, 1, 325628 }, { 7, 8, 921688 }, { 3, 6, 578059 }, { 5, 7, 713678 }, { 9, 7, 385644 },
+				{ 4, 9, 460007 }, { 7, 2, 448342 }, { 8, 6, 137281 } };
+		int armies[][] = { { 5, 3 }, { 12, 8 }, { 4, 3 }, { 17, 5 }, { 15, 19 }, { 5, 14 }, { 1, 1 }, { 5, 0 },
+				{ 4, 11 } };
+		assertTrue(cwc.simulate(routes, armies,true) == 12379051);
+	}*/
 
 }
