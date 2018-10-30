@@ -14,6 +14,11 @@ public class ArmyNation extends Nation
 
     /**
      * Constructor for objects of class ArmyNation
+     * @param shape forma de la nacion
+     * @param area, indica el area que tendra la nacion
+     * @param color, indica el color que tendra la nacion
+     * @position, indica la posicion en que se va a ubicar la nacion en el conquer world
+     * @armiesNeeded, indica las armies necesarios para conquistar la nacion
      */
     public ArmyNation(String shape, int area, String color, int[] position, int armiesNeeded)
     {
@@ -22,12 +27,16 @@ public class ArmyNation extends Nation
         newArmy("proactive");
         newArmy("wanderer");
     }
-
+    /**
+     * Borra la nacion del conquer world
+     */
     public void borrar(){
         Canvas canvas = Canvas.canvas;
         canvas.erase(figura);
     }
-    
+    /**
+     * Remueve la nacion de las rutas de la nacion
+     */
     public void removeRoute(Nation nation){
         elimiateRoute(nation);
     }

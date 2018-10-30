@@ -91,6 +91,15 @@ public class ConquerWorld
             indicador = false;
         }
     }
+    /**
+     * Agrega una nacion al conquer world, dependiendo del tipo que se desee
+     * @param shape Forma que va a representar la nacion
+     * @param area Indica el area que va a tener dicha figura
+     * @param color Indica el color y nombre que tendrá la nacion
+     * @param position Indica la coordenada x e y, donde estará ubicada la figura
+     * @param armiesNeeded Indica la cantidad de ejercitos necesarios para conquistar la nacion
+     * @param type, indica el tipo de nacion que se desea agregar
+     */
     public void addNation(String shape, int area, String color, int[] position, int armiesNeeded,String type) {
         nation = getNation(color);
         boolean key = false;
@@ -226,6 +235,11 @@ public class ConquerWorld
         }
     }
     
+    /**
+     * Agrega una nacion de un tipo especifico a la nacion especificada
+     * @param nation, nombre de la nacion a la cual se le va a agregar el army
+     * @param type, indica el tipo de la army que se va a agregar
+     */
     public void addArmy(String nation, String type){
         Nation n = getNation(nation);
         if (n != null){
@@ -392,6 +406,9 @@ public class ConquerWorld
     public boolean ok(){
         return indicador;
     }
+    /**
+     * Indica si la adicion de las rutas se llevo acabo de forma adecuada
+     */
     public boolean okRoutes(){
         boolean okR = true;
         for (String i: nats.keySet()){
