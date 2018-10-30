@@ -42,6 +42,7 @@ public abstract class Nation
     }
     /**
      * Agrega un ejercito a la nacion actual
+     * @param type, indica el tipo de la army que se va a agregar
      */
     public void newArmy(String type){
         if (type.equals("normal")){
@@ -66,6 +67,10 @@ public abstract class Nation
             armies.add(new PositiveArmy(position));
         }
     }
+    /**
+     * Agrega un army a la nacion a la que se va a mover
+     * @param ejercito, objeto del army que se va a mover a esta nacion
+     */
     public void addArmy(Army ejercito){
         armies.add(ejercito);
     }
